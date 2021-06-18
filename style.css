@@ -1,0 +1,136 @@
+body {
+  background-color: hsl(233, 47%, 7%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter;
+  font-size: 15px;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 540px);
+  grid-template-rows: 446px;
+  grid-template-areas: "contentText contentImage";
+}
+
+.attribution {
+  grid-column: 1/3;
+}
+
+.contentText {
+  color: white;
+  display: flex;
+  background-color: hsl(244, 38%, 16%);
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  border-top-left-radius: 2%;
+  border-bottom-left-radius: 2%;
+  grid-area: contentText;
+}
+
+.contentText_mainHeading {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.contentText_mainHeading--highlighted {
+  color: hsl(277, 64%, 61%);
+}
+
+.contentText_mainParagraph {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.numbersContainer {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.contentImage img {
+    border-top-right-radius: 2%;
+    border-bottom-right-radius: 2%;
+    background-color: hsl(277, 64%, 61%);
+    grid-area: contentImage;
+}
+
+.contentImage_filter {
+  width: 540px;
+  height: 446px;
+  background-color: hsl(277, 64%, 61%);
+  transform: translate(0%, -450px);
+  opacity: 60%;
+  border-top-right-radius: 2%;
+  border-bottom-right-radius: 2%;
+}
+
+.numberEntry {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.numberEntry_number {
+  margin-bottom: 10px;
+  color: white; 
+}
+
+.attribution {
+  margin-top: 20px;
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 13px;
+}
+
+.attribution a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1080px){
+  body {
+    height: unset;
+  }
+  .container {
+    grid-template-columns: 540px;
+    grid-template-areas: 
+      "contentImage"
+      "contentText"
+  }
+
+  .contentImage img, .contentImage_filter {
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-bottom-right-radius: unset;
+  }
+
+  .contentText {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  }
+
+  .numberEntry {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contentText {
+    padding: 40px;
+  }
+
+  .numbersContainer {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .contentText_mainHeading, .contentText_mainParagraph {
+    text-align: center;
+  }
+
+}
